@@ -20,7 +20,7 @@
                   <a class="dropdown-item" href="#">Kosmetik</a>
                 </div>
               </li>
-		      <li class="nav-item">
+		      <li class="nav-item mr-2">
 		        <a class="nav-link" href="#">Blog</a>
 		      </li>
 		      <form class="form-inline">
@@ -41,7 +41,7 @@
 		    		
 				    
 				    <span class="fa-layers fa-fw">
-					    <i class="fas fa-shopping-cart fa-2x" style="color:black"></i>
+					    <i class="fas fa-shopping-cart fa-2x" style="color:#2F4F4F"></i>
 					    <i class="fas fa-circle fa-inverse fa-2x" data-fa-transform="shrink-5 up-6 right-7" style="color:Tomato"></i>
 					    <span class="fa-layers-text fa-inverse fa-2x" data-fa-transform="shrink-10 up-6 right-10">20</span>
 					</span>
