@@ -1,23 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?= base_url('assets/') ?>vendor/bootstrap/css/bootstrap.min.css">
-
-
-    <!-- fontawesome -->
-    <!-- <link rel="stylesheet" href="<?= base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css"> -->
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="<?= base_url('assets/') ?>vendor/sbadmin/css/sb-admin-2.min.css">
-
-    <title>SEPODO</title>
-  </head>
-  <body style="background-color: #05b7c2;">
-  <div class="container" >
+ <div class="container" >
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
@@ -35,25 +16,27 @@
                   </div>
                   <form class="user" action="" method="post">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="masukkan email" value="<?= set_value('email'); ?>">
                     </div>
+                    <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
                     </div>
+                    <?= form_error('password', '<small class="text-danger">', '</small>'); ?>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input" id="customCheck">
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <button class="btn btn-primary btn-user btn-block">Login</button>
+                    <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">Login</button>
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Lupa Password?</a>
+                    <a class="small" href=" <?= base_url('auth/forgetPassword') ?>">Lupa Password?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.html">Buat Akun</a>
+                    <a class="small" href="<?= base_url('auth/registration')  ?>">Buat Akun</a>
                   </div>
                 </div>
               </div>
