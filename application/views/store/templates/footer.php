@@ -1,5 +1,5 @@
      <!-- copyright -->
-      <footer class="sticky-footer bg-white">
+      <footer class="sticky-footer font-weight-bolder">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; SEPODO 2019-<?= date('Y'); ?></span>
