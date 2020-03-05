@@ -38,23 +38,25 @@
 		  </div>  
 		    <div class="mr-lg-5 my-2 my-lg-0">
 		    	<div>
-		    		
-				    
+		    	<a href="<?= base_url('home/cart') ?>" class="text-dark text-decoration-none">
 				    <span class="fa-layers fa-fw">
 					    <i class="fas fa-shopping-cart fa-2x" style="color:#2F4F4F"></i>
 					    <i class="fas fa-circle fa-inverse fa-2x" data-fa-transform="shrink-5 up-6 right-7" style="color:Tomato"></i>
 					    <span class="fa-layers-text fa-inverse fa-2x" data-fa-transform="shrink-10 up-6 right-10">20</span>
 					</span>
 				    <!--  -->
-				
+				</a>
 		    	</div>
 			    
 		    </div>
-		    <div class="my-2 my-lg-0" style="color:black">
-			    <div>
-			    	<span class="d-none d-lg-inline font-weight-bolder">akun</span>
-			    	<i class="fas fa-user-circle fa-2x"></i>
-			    </div>
+		    <div class="my-2 my-lg-0">
+			    <a href="<?= base_url('auth') ?>" class="text-dark text-decoration-none">
+			    	<div>
+				    	<span class="d-none d-lg-inline font-weight-bolder">akun</span>
+				    	<i class="fas fa-user-circle fa-2x"></i>
+			    	</div>
+			    </a>
+			    
 		    </div>
 
 		  
