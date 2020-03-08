@@ -1,76 +1,115 @@
 <div class="container-fluid">
 	<div class="row mt-2">
 		<div class="col-6 col-md-4 col-lg-2">
-			<div class="card border-3 shadow-lg my-2">
-			    <img src="..." class="card-img-top" alt="...">
+			<div class="card border-3 shadow-lg my-1">
+				
+			    <img src="<?= base_url('assets/') ?>upload/products/1.jpg" class="card-img-top" alt="...">
+			  
 			    <div class="card-body">
-			      <h5 class="card-title">Card title</h5>
-			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			      <h6 class="card-title font-weight-bolder text-info">Gamis Firda</h6>
+			      <small>Rp 375.000</small>
+			     	<br>
+			      <small class="font-weight-bold">stok 999</small>
 			    </div>
-			    <div class="card-footer">
-			      <button type="button" class="btn btn-success btn-sm">Small button</button>
-			    </div>
+			    
+			    <!-- <div class="card-footer">
+			    </div> -->
 			</div>
 		</div>
 		<div class="col-6 col-md-4 col-lg-2">
-			<div class="card">
-			    <img src="..." class="card-img-top" alt="...">
+			<div class="card border-3 shadow-lg my-1">
+				
+			    <img src="<?= base_url('assets/') ?>upload/products/1.jpg" class="card-img-top" alt="...">
+			  
 			    <div class="card-body">
-			      <h5 class="card-title">Card title</h5>
-			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			      <h6 class="card-title font-weight-bolder text-info">Gamis Firda</h6>
+			      <small>Rp 375.000</small>
+			     	<br>
+			      <small class="font-weight-bold">stok 999</small>
 			    </div>
-			    <div class="card-footer">
-			      <small class="text-muted">Last updated 3 mins ago</small>
-			    </div>
+			    
+			    <!-- <div class="card-footer">
+			    </div> -->
 			</div>
 		</div>
 		<div class="col-6 col-md-4 col-lg-2">
-			<div class="card">
-			    <img src="..." class="card-img-top" alt="...">
+			<div class="card border-3 shadow-lg my-1">
+				
+			    <img src="<?= base_url('assets/') ?>upload/products/1.jpg" class="card-img-top" alt="...">
+			  
 			    <div class="card-body">
-			      <h5 class="card-title">Card title</h5>
-			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			      <h6 class="card-title font-weight-bolder text-info">Gamis Firda</h6>
+			      <small>Rp 375.000</small>
+			     	<br>
+			      <small class="font-weight-bold">stok 999</small>
 			    </div>
-			    <div class="card-footer">
-			      <small class="text-muted">Last updated 3 mins ago</small>
-			    </div>
+			    
+			    <!-- <div class="card-footer">
+			    </div> -->
 			</div>
 		</div>
 		<div class="col-6 col-md-4 col-lg-2">
-			<div class="card">
-			    <img src="..." class="card-img-top" alt="...">
+			<div class="card border-3 shadow-lg my-1">
+				
+			    <img src="<?= base_url('assets/') ?>upload/products/1.jpg" class="card-img-top" alt="...">
+			  
 			    <div class="card-body">
-			      <h5 class="card-title">Card title</h5>
-			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			      <h6 class="card-title font-weight-bolder text-info">Gamis Firda</h6>
+			      <small>Rp 375.000</small>
+			     	<br>
+			      <small class="font-weight-bold">stok 999</small>
 			    </div>
-			    <div class="card-footer">
-			      <small class="text-muted">Last updated 3 mins ago</small>
-			    </div>
+			    
+			    <!-- <div class="card-footer">
+			    </div> -->
 			</div>
 		</div>
 		<div class="col-6 col-md-4 col-lg-2">
-			<div class="card">
-			    <img src="..." class="card-img-top" alt="...">
+			<div class="card border-3 shadow-lg my-1">
+				
+			    <img src="<?= base_url('assets/') ?>upload/products/1.jpg" class="card-img-top" alt="...">
+			  
 			    <div class="card-body">
-			      <h5 class="card-title">Card title</h5>
-			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			      <h6 class="card-title font-weight-bolder text-info">Gamis Firda</h6>
+			      <small>Rp 375.000</small>
+			     	<br>
+			      <small class="font-weight-bold">stok 999</small>
 			    </div>
-			    <div class="card-footer">
-			      <small class="text-muted">Last updated 3 mins ago</small>
-			    </div>
+			    
+			    <!-- <div class="card-footer">
+			    </div> -->
 			</div>
 		</div>
 		<div class="col-6 col-md-4 col-lg-2">
-			<div class="card">
-			    <img src="..." class="card-img-top" alt="...">
+			<div class="card border-3 shadow-lg my-1">
+				
+			    <img src="<?= base_url('assets/') ?>upload/products/1.jpg" class="card-img-top" alt="...">
+			  
 			    <div class="card-body">
-			      <h5 class="card-title">Card title</h5>
-			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			      <h6 class="card-title font-weight-bolder text-info">Gamis Firda</h6>
+			      <small>Rp 375.000</small>
+			     	<br>
+			      <small class="font-weight-bold">stok 999</small>
 			    </div>
-			    <div class="card-footer">
-
-			      <small class="text-muted">Last updated 3 mins ago</small>
+			    
+			    <!-- <div class="card-footer">
+			    </div> -->
+			</div>
+		</div>
+		<div class="col-6 col-md-4 col-lg-2">
+			<div class="card border-3 shadow-lg my-1">
+				
+			    <img src="<?= base_url('assets/') ?>upload/products/1.jpg" class="card-img-top" alt="...">
+			  
+			    <div class="card-body">
+			      <h6 class="card-title font-weight-bolder text-info">Gamis Firda</h6>
+			      <small>Rp 375.000</small>
+			     	<br>
+			      <small class="font-weight-bold">stok 999</small>
 			    </div>
+			    
+			    <!-- <div class="card-footer">
+			    </div> -->
 			</div>
 		</div>
 	</div>
