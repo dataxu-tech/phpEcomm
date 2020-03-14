@@ -28,4 +28,42 @@ class Product_model extends CI_Model
             ];
         $this->db->insert('product', $data);
 	}
+
+	private function _uploadimage()
+	{
+        $data = $_FILES['image']['name'];
+        $dt = md5($data);
+        $config['upload_path']          = './assets/upload/products/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $dt;
+        $config['max_size']             = 2048;
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if($this->upload->do_upload('image')){
+            return $this->upload->data('file_name');
+        }
+
+        return 'default.jpg';
+    }
+
+    public function delete($id)
+    {
+        $this->_deleteImage($id);
+        return $this->db->delete('product', ['id' => $id]);
+    }
+
+    private function _deleteImage($id)
+    {
+    $dt = $this->getProductById($id);
+    
+    
+        if ($dt['image'] != "default.jpg") {
+            $filename = explode(".", $dt['image'])[0];
+            return array_map('unlink', glob(FCPATH."./assets/upload/products/$filename.*"));
+        }
+    }
+
 }

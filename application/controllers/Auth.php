@@ -23,7 +23,7 @@ class Auth extends CI_Controller {
 			$this->load->view('auth/login');
 			$this->load->view('auth/footer');
 			} else {
-			// when validation success
+			//-- when validation success
            $this->_login();
 		}
 		
@@ -37,16 +37,18 @@ class Auth extends CI_Controller {
         //query data from database
         $user = $this->db->get_where('user', ['email' => $email])->row_array();
         
-        //when user axist
+        //--when user axist
         if($user)
         {
-            //when user activated
+            //--when user activated
             if( $user['is_active'] ==1 )
             {
-                //ceck password
+                //--ceck password
                 if(password_verify($password, $user['password']))
                 {
-                    //data for session
+                    
+                    //--data for session
+
                     $data = [
                         'email'     => $user['email'],
                         'role_id'   => $user['role_id']
@@ -54,7 +56,8 @@ class Auth extends CI_Controller {
 
                     $this->session->set_userdata($data);
 
-                    //redirect('user');
+                    //--redirect user;
+                    
                     if($user['role_id'] == 1 ) {
                             redirect('useraccess/owner');
                         } elseif ($user['role_id'] == 2 ) {
@@ -83,6 +86,7 @@ class Auth extends CI_Controller {
         }
 	}
 
+	
 	public function registration()
 	{
 		
