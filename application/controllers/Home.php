@@ -11,9 +11,14 @@ class Home extends CI_Controller {
 	{
 		$data['user'] = $this->user;
 		
-		$this->load->view('store/templates/header');
-		$this->load->view('store/templates/navbar', $data);
+		$this->load->view('store/templates/header',$data);
+		$this->load->view('store/templates/topbar',$data);
 		$this->load->view('index',$data);
 		$this->load->view('store/templates/footer');
+	}
+
+	public function singleProduct()
+	{
+		$data['user'] = $this->user;
 	}
 }

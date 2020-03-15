@@ -59,7 +59,7 @@
 			    </a>
 			    <?php else : ?>
 	              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['name']; ?></span>
+	                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['username']; ?></span>
 	                <img class="img-profile rounded-circle" width="25px" src="<?= base_url('assets/upload/profile/') . $user['image']; ?>">
 	              </a>
 	              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

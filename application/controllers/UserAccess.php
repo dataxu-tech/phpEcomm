@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends CI_Controller {
+class UserAccess extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -11,7 +11,6 @@ class Auth extends CI_Controller {
 	public function member()
 	{
 		$data['user'] = $this->user;
-		$data['allProduct'] = $this->Product_model->getAllProduct();
 
 		$this->load->view('admin/templates/header', $data);
 		$this->load->view('admin/templates/topbar', $data);

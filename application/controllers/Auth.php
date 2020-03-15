@@ -22,7 +22,8 @@ class Auth extends CI_Controller {
 			$this->load->view('auth/header');
 			$this->load->view('auth/login');
 			$this->load->view('auth/footer');
-			} else {
+			} else 
+			{
 			//-- when validation success
            $this->_login();
 		}
@@ -36,7 +37,8 @@ class Auth extends CI_Controller {
 
         //query data from database
         $user = $this->db->get_where('user', ['email' => $email])->row_array();
-        
+
+
         //--when user axist
         if($user)
         {
@@ -50,8 +52,9 @@ class Auth extends CI_Controller {
                     //--data for session
 
                     $data = [
-                        'email'     => $user['email'],
-                        'role_id'   => $user['role_id']
+                        'email'     		=> $user['email'],
+                        'role_id'   		=> $user['role_id'],
+                        'member_status'     => $user['member_status']
                     ];
 
                     $this->session->set_userdata($data);
@@ -62,8 +65,8 @@ class Auth extends CI_Controller {
                             redirect('useraccess/owner');
                         } elseif ($user['role_id'] == 2 ) {
                             redirect('useraccess/admin');
-                        } elseif ($user['role_id'] == 3 ) {
-                            redirect('useraccess/index');
+                        } elseif ($user['role_id'] == 3 && $user['member_status'] == 1 ) {
+                            redirect('useraccess/member');
                         }else {
                             redirect('home/index');
                         }
@@ -131,6 +134,7 @@ class Auth extends CI_Controller {
                     'image'     	=> 'default.jpg',
                     'password'  	=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                     'role_id'   	=> 3,
+                    'member_status' => 0,
                     'is_active' 	=> 0,
                     'date_created' 	=> time()
                     ];
@@ -150,4 +154,13 @@ class Auth extends CI_Controller {
 		$this->load->view('auth/forget_password');
 		$this->load->view('auth/footer');
 	}
+
+	public function logout()
+    {
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+
+        $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Logout sukses!</div>');
+        redirect('home/index');
+    }
 }
