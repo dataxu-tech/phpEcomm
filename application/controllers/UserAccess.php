@@ -13,7 +13,7 @@ class UserAccess extends CI_Controller {
 		$data['user'] = $this->user;
 
 		$this->load->view('admin/templates/header', $data);
-		$this->load->view('admin/templates/topbar', $data);
+		$this->load->view('member/templates/topbar', $data);
 		$this->load->view('member/index',$data);
         $this->load->view('admin/templates/footer');
 	}
