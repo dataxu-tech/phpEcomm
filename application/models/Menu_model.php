@@ -9,6 +9,20 @@ class Menu_model extends CI_Model
 		return $this->db->get('admin_menu')->result_array();
 	}
 
+	public function getMenuByRoleId()
+	{
+		$role_id = $this->session->userdata('role_id');
+		
+		$queryMenu = "SELECT `admin_menu` . `id`, `menu`
+                    FROM `admin_menu` JOIN `admin_access_menu` 
+                    ON `admin_menu` . `id` = `admin_access_menu` . `menu_id`
+                  WHERE `admin_access_menu`.`role_id` = $role_id
+                  ORDER BY `admin_access_menu` . `role_id` ASC
+      ";
+
+      return $this->db->query($queryMenu)->result_array();
+	}
+
 	public function updateMenu($id)
 	{
 		$data = [
@@ -28,9 +42,9 @@ class Menu_model extends CI_Model
 
 	public function getSubMenu()
 	{
-		$query = "SELECT `admin_sub_menu`.*, `admin_menu`.`menu`
-					FROM `admin_sub_menu` JOIN `admin_menu`
-					ON `admin_sub_menu`.`menu_id` = `admin_menu`.`id`
+		$query = "SELECT `admin_submenu`.*, `admin_menu`.`menu`
+					FROM `admin_submenu` JOIN `admin_menu`
+					ON `admin_submenu`.`menu_id` = `admin_menu`.`id`
 					";
 		return $this->db->query($query)->result_array();
 
@@ -38,7 +52,7 @@ class Menu_model extends CI_Model
 
 	public function getSubMenuById($id)
 	{
-		return $this->db->get_where('admin_sub_menu', ['id' => $id])->result_array();
+		return $this->db->get_where('admin_submenu', ['id' => $id])->result_array();
 	}
 
 	public function addSubMenu()
@@ -51,7 +65,7 @@ class Menu_model extends CI_Model
         			'icon'		=> $this->input->post('icon'),
         			'is_active'	=> $this->input->post('is_active')
         	];
-        return $this->db->insert('admin_sub_menu', $data);
+        return $this->db->insert('admin_submenu', $data);
 	}
 
 	public function updateSubMenu($id)
@@ -66,12 +80,12 @@ class Menu_model extends CI_Model
         			'is_active'	=> $this->input->post('is_active')
         	];
         $this->db->where('id', $id);
-		return $this->db->update('admin_sub_menu', $data);
+		return $this->db->update('admin_submenu', $data);
 	}
 
 
 	public function deleteSubMenu($id)
 	{
-		return $this->db->delete('admin_sub_menu', ['id' => $id]);
+		return $this->db->delete('admin_submenu', ['id' => $id]);
 	}
 }

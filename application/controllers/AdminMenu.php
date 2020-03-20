@@ -36,20 +36,17 @@ class AdminMenu extends CI_Controller
 	{
 		$data['title'] = 'Menu Utama';
 		$data['user'] 	= $this->user;
-		$data ['menu'] = $this->db->get_where('user_menu', ['id' => $id])->row_array();
-		
+		$data ['menu'] = $this->db->get_where('admin_menu', ['id' => $id])->row_array();
 
 		$this->form_validation->set_rules('menu', 'Menu', 'required', ['required' => 'Nama menu harus di isi']);
 
 		if ($this->form_validation->run() == false){
-
 		$this->load->view('admin/templates/header', $data);
 		$this->load->view('admin/templates/sidebar');
 		$this->load->view('admin/templates/topbar');
         $this->load->view('admin/menu_management/update_menu', $data);
         $this->load->view('admin/templates/footer');	
 		}else{
-			
 		
 		$this->Menu_model->updateMenu($id);
 		$this->session->set_flashdata('message','<div class="alert alert-success" role="alert">menu berhasil ditambah!</div>');

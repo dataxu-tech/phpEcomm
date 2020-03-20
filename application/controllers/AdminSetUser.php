@@ -3,12 +3,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class AdminSetUser extends CI_Controller
 {
+	
+	public function __construct(){
+		parent::__construct();
+		$this->user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+	}
+
 	public function index()
 	{
-		$data['title'] = 'User Role';
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['title'] 		= 'User Role';
+		$data['user'] 		= $this->user;
 		$data['userAccess'] = $this->db->get('user')->result_array();
-		$data['role'] = $this->db->get('user_role', 'role')->row_array();
+		$data['role'] 		= $this->db->get('user_role', 'role')->row_array();
 
 		$this->load->view('admin/templates/header', $data);
 		$this->load->view('admin/templates/sidebar');
@@ -21,10 +27,9 @@ class AdminSetUser extends CI_Controller
 
 	public function update($id)
 	{
-		$data['title'] = 'User Role';
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-		
-		$data['edit'] = $this->db->get_where('user',['id' => $id])->result_array();
+		$data['title'] 		= 'User Role';
+		$data['user'] 		= $this->user;
+		$data['edit'] 		= $this->db->get_where('user',['id' => $id])->result_array();
 
 		//validasi data user input
 		$this->form_validation->set_rules('name', 'Name', 'required', ['required' => 'menu harus di isi']);
