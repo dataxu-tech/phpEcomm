@@ -47,7 +47,7 @@
     <script src="<?= base_url('assets/') ?>vendor/sbadmin/js/sb-admin-2.min.js"></script>
 
     <!-- custom js -->
-    <script src="<?= base_url('assets/') ?>store/js/custom.js"></script>
+    <script src="<?= base_url('assets/') ?>/vendor/custom/js/custom.js"></script>
     
   </body>
 

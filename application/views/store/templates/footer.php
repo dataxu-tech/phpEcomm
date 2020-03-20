@@ -33,7 +33,7 @@
     </div>
   </div>
 
-    <!-- jquery -->
+     <!-- jquery -->
     <script src="<?= base_url('assets/') ?>vendor/jquery/jquery.min.js"></script>
     <!-- bootstrap -->
     <script src="<?= base_url('assets/') ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -48,8 +48,7 @@
     <script src="<?= base_url('assets/') ?>vendor/sbadmin/js/sb-admin-2.min.js"></script>
 
     <!-- custom js -->
-    <script src="<?= base_url('assets/') ?>store/js/custom.js"></script>
-    
+    <script src="<?= base_url('assets/') ?>/vendor/custom/js/custom.js"></script>
     
 </body>
 

@@ -29,15 +29,15 @@ class UserAccess extends CI_Controller {
 		$this->load->view('admin/templates/header', $data);
 		$this->load->view('admin/templates/topbar', $data);
 		$this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/menu_managemen/menu', $data);
+        $this->load->view('admin/transactions/index', $data);
         $this->load->view('admin/templates/footer');
 	}
 
 	public function ceo()
 	{
 		
-		$data['title'] = 'Dashboard';
-		$data['user'] = $this->user;
+		$data['title'] 	= 'Dashboard';
+		$data['user'] 	= $this->user;
 		$data['menu'] 	= $this->Menu_model->getMenuByRoleId();
 		
 
