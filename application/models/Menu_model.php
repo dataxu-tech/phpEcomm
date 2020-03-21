@@ -9,19 +9,7 @@ class Menu_model extends CI_Model
 		return $this->db->get('admin_menu')->result_array();
 	}
 
-	public function getMenuByRoleId()
-	{
-		$role_id = $this->session->userdata('role_id');
-		
-		$queryMenu = "SELECT `admin_menu` . `id`, `menu`
-                    FROM `admin_menu` JOIN `admin_access_menu` 
-                    ON `admin_menu` . `id` = `admin_access_menu` . `menu_id`
-                  WHERE `admin_access_menu`.`role_id` = $role_id
-                  ORDER BY `admin_access_menu` . `role_id` ASC
-      ";
-
-      return $this->db->query($queryMenu)->result_array();
-	}
+	
 
 	public function updateMenu($id)
 	{

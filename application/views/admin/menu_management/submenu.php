@@ -1,3 +1,4 @@
+
 <body id="page-top"> 
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -37,8 +38,8 @@
             <td><?= $sm['icon']; ?></td>
             <td><?= $sm['is_active']; ?></td>
 			      <td>
-			      	<a href="<?= base_url('adminSubMenu/update/') ?><?= $sm['id']; ?>" class="btn btn-outline-success btn-sm" >edit</a> | 
-					<a href="<?= base_url('adminSubMenu/delete/') ?><?= $sm['id']; ?>" class="btn btn-outline-danger btn-sm">delete</a>
+			      	  <a href="<?= base_url('adminSubMenu/update/') ?><?= $sm['id']; ?>" class="btn btn-outline-success btn-sm" >edit</a> | 
+					     <a href="<?= base_url('adminSubMenu/delete/') ?><?= $sm['id']; ?>" class="btn btn-outline-danger btn-sm">delete</a>
 			      </td>			      
 			    </tr>
 			    <?php $i++; ?>

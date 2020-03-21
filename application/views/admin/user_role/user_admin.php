@@ -26,7 +26,7 @@
 			  <?php foreach ($userAccess as $ua) : ?>
 			    <tr>
 			      <th scope="row"><?= $i; ?></th>
-			      <td><?= $ua['name']; ?></td>
+			      <td><?= $ua['username']; ?></td>
 			      <td><?= $ua['email']; ?></td>
 			      <td><?= $ua['role_id']; ?></td>
 			      <td><?= $ua['is_active']; ?></td>

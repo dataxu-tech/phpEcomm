@@ -11,7 +11,7 @@
         <div class="sidebar-brand-icon">
           <i class="fas fa-fw fa-store"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Sepodo Admin</div>
+        <div class="sidebar-brand-text mx-3">ADMIN CENTER</div>
       </a>
 
       <!-- Divider -->
@@ -20,16 +20,17 @@
       <!-- query menu -->
 
       <?php
-      // $role_id = $this->session->admindata('role_id');
+      $role_id = $this->session->userdata('role_id');
+    
+      $queryMenu = "SELECT `admin_menu` . `id`, `menu`
+                    FROM `admin_menu` JOIN `admin_access_menu` 
+                    ON `admin_menu` . `id` = `admin_access_menu` . `menu_id`
+                  WHERE `admin_access_menu`.`role_id` = $role_id
+                  ORDER BY `admin_access_menu` . `role_id` ASC
+      ";
 
-      // $queryMenu = "SELECT `user_menu` . `id`, `menu`
-      //               FROM `user_menu` JOIN `user_access_menu` 
-      //               ON `user_menu` . `id` = `user_access_menu` . `menu_id`
-      //             WHERE `user_access_menu`.`role_id` = $role_id
-      //             ORDER BY `user_access_menu` . `role_id` ASC
-      // ";
 
-      // $menu = $this->db->query($queryMenu)->result_array();
+      $menu = $this->db->query($queryMenu)->result_array();
 
       ?>
 
