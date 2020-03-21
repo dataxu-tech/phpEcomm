@@ -11,7 +11,7 @@
         <div class="sidebar-brand-icon">
           <i class="fas fa-fw fa-store"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Sepodo Admin</div>
+        <div class="sidebar-brand-text mx-3">ADMIN CENTER</div>
       </a>
 
       <!-- Divider -->
@@ -21,13 +21,14 @@
 
       <?php
       $role_id = $this->session->userdata('role_id');
-
-      $queryMenu = "SELECT `user_menu` . `id`, `menu`
-                    FROM `user_menu` JOIN `user_access_menu` 
-                    ON `user_menu` . `id` = `user_access_menu` . `menu_id`
-                  WHERE `user_access_menu`.`role_id` = $role_id
-                  ORDER BY `user_access_menu` . `role_id` ASC
+    
+      $queryMenu = "SELECT `admin_menu` . `id`, `menu`
+                    FROM `admin_menu` JOIN `admin_access_menu` 
+                    ON `admin_menu` . `id` = `admin_access_menu` . `menu_id`
+                  WHERE `admin_access_menu`.`role_id` = $role_id
+                  ORDER BY `admin_access_menu` . `role_id` ASC
       ";
+
 
       $menu = $this->db->query($queryMenu)->result_array();
 
@@ -44,10 +45,10 @@
           <?php 
             $menuId = $m['id'];
             $querySubMenu = "SELECT *
-                              FROM `user_sub_menu` JOIN `user_menu` 
-                                ON `user_sub_menu`.`menu_id` = `user_menu`.`id`
-                             WHERE `user_sub_menu`.`menu_id` = $menuId 
-                              AND `user_sub_menu`. `is_active` = 1
+                              FROM `admin_submenu` JOIN `admin_menu` 
+                                ON `admin_submenu`.`menu_id` = `admin_menu`.`id`
+                             WHERE `admin_submenu`.`menu_id` = $menuId 
+                              AND `admin_submenu`. `is_active` = 1
                              ";
             $subMenu = $this->db->query($querySubMenu)->result_array();
 
