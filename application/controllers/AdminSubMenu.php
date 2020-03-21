@@ -16,6 +16,7 @@ class AdminSubMenu extends CI_Controller
 		$data ['menu'] 		= $this->Menu_model->getAllMenu();
 		$data['subMenu'] 	= $this->Menu_model->getSubMenu();
 
+		
 		$this->form_validation->set_rules('menu_id', 'Menu', 'required', ['required' => 'menu harus di isi']);
 		$this->form_validation->set_rules('title', 'Title', 'required', ['required' => 'judul harus di isi']);
 		$this->form_validation->set_rules('url', 'Url', 'required', ['required' => 'url harus di isi']);
