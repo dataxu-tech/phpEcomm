@@ -20,11 +20,8 @@
             <th scope="col">NO</th>
             <th scope="col">Name</th>
             <th scope="col">Gambar</th>
-            <th scope="col">Visibility</th>
-            <th scope="col">Kuantitas</th>
             <th scope="col">Harga</th>
-            <th scope="col">Harga Coret</th>
-            <th scope="col">Berat</th>
+            <th scope="col">Harga member</th>
             <th scope="col">Action</th>          
           </tr>
         </thead>
@@ -36,12 +33,9 @@
             <td><?= $p['name']; ?></td>
             <td>
               <img src="<?= base_url('assets/upload/products/') . $p['image'];?>" alt="" class="img-thumbnail" width="250" height="10">
-            </td>            
-            <td><?= $p['visibility']; ?></td>            
-            <td><?= $p['quantity']; ?></td>
+            </td>
             <td><?= $p['price']; ?></td>
-            <td><?= $p['old_price']; ?></td>
-            <td><?= $p['weight']; ?> Gram</td> 
+            <td><?= $p['member_price']; ?></td> 
             <td>               
               <a href="<?= base_url(); ?>adminProduct/singleProduct/<?= $p['id']; ?>" class="btn btn-outline-primary btn-sm">detail</a> |
               <a href="<?= base_url(); ?>adminProduct/delete/<?= $p['id']; ?>" class="btn btn-outline-danger btn-sm" >delete</a>
@@ -70,16 +64,13 @@
       <div class="modal-body">
         <input type="hidden" class="form-control" id="id" name="id">
         <div class="form-group">
-          <input type="text" class="form-control" id="name" name="name" placeholder="name">
-        </div>
-        <div class="form-group">
           <input type="file" class="form-control" id="image" name="image" value="<?= uniqid (rand(), true); ?>">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="visibility" name="visibility" placeholder="visibility">
+          <input type="text" class="form-control" id="name" name="name" placeholder="name">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="category" name="category" placeholder="category">
+          <input type="text" class="form-control" id="category_id" name="category_id" placeholder="category_id">
         </div>
         <div class="form-group">
           <input type="text" class="form-control" id="description" name="description" placeholder="description">
@@ -91,27 +82,13 @@
           <input type="text" class="form-control" id="price" name="price" placeholder="price">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="old_price" name="old_price" placeholder="old_price">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="free_delivery" name="free_delivery" placeholder="free_delivery">
+          <input type="text" class="form-control" id="member_price" name="member_price" placeholder="member_price">
         </div>
         <div class="form-group">
           <input type="text" class="form-control" id="weight" name="weight" placeholder="weight">
         </div>
         <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" value="1" name="in_slider" id="in_slider" >
-            <label class="form-check-label" for="in_slider">
-              slider aktif?
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" value="0" name="in_slider" id="in_slider" checked>
-            <label class="form-check-label" for="in_slider" >
-               slider tidak aktif?
-            </label>
-          </div>
+          <input type="text" class="form-control" id="shipping_origin" name="shipping_origin" placeholder="shipping_origin">
         </div>
       </div>
       <div class="modal-footer">

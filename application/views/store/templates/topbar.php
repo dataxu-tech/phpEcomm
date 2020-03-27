@@ -49,6 +49,7 @@
 		    	</div>
 			    
 		    </div>
+		    <div class="topbar-divider d-none d-sm-block"></div>
 		    <div class="my-2 my-lg-0">
 		    	<?php if (!$user) : ?>
 			    <a href="<?= base_url('auth') ?>" class="text-dark text-decoration-none">

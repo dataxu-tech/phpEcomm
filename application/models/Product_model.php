@@ -18,12 +18,12 @@ class Product_model extends CI_Model
                     
                     'image'     		=> $this->_uploadimage(),
                     'name'   			=> htmlspecialchars($this->input->post('name',true)),
-                    'cat_id'     		=> htmlspecialchars($this->input->post('cat_id',true)),
+                    'category_id'     	=> htmlspecialchars($this->input->post('category_id',true)),
                     'description'   	=> htmlspecialchars($this->input->post('description',true)),
                     'quantity'     		=> htmlspecialchars($this->input->post('quantity',true)),
                     'price'  			=> htmlspecialchars($this->input->post('price',true)),
                     'member_price'      => htmlspecialchars($this->input->post('member_price',true)),
-                    'wight' 			=> htmlspecialchars($this->input->post('wight',true)),
+                    'weight' 			=> htmlspecialchars($this->input->post('weight',true)),
                     'shipping_origin'   => htmlspecialchars($this->input->post('in_slider'))                   
             ];
         $this->db->insert('product', $data);
@@ -36,7 +36,7 @@ class Product_model extends CI_Model
         $config['upload_path']          = './assets/upload/products/';
         $config['allowed_types']        = 'gif|jpg|png';
         $config['file_name']            = $dt;
-        $config['max_size']             = 2048;
+        $config['max_size']             = 5140;
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
 
