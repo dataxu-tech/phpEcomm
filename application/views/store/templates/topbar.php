@@ -1,6 +1,6 @@
 <!-- start navbar -->
     	<nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #05b7c2;">
-		  <a class="navbar-brand" href="#">Navbar</a>
+		  <a class="navbar-brand" href="<?= base_url('home') ?>">SHOP</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
@@ -38,11 +38,18 @@
 		  </div>  
 		    <div class="mr-lg-5 my-2 my-lg-0">
 		    	<div>
-		    	<a href="<?= base_url('home/cart') ?>" class="text-dark text-decoration-none">
+		    	<a href="<?= base_url('home/detailOrder') ?>" class="text-dark text-decoration-none">
 				    <span class="fa-layers fa-fw">
 					    <i class="fas fa-shopping-cart fa-2x" style="color:#2F4F4F"></i>
 					    <i class="fas fa-circle fa-inverse fa-2x" data-fa-transform="shrink-5 up-6 right-7" style="color:Tomato"></i>
-					    <span class="fa-layers-text fa-inverse fa-2x" data-fa-transform="shrink-10 up-6 right-10">20</span>
+					    <span class="fa-layers-text fa-inverse fa-2x" data-fa-transform="shrink-10 up-6 right-10">
+					    	<?php if ($this->cart->total_items() < 100) {
+		                      echo $this->cart->total_items();
+		                    } else {
+		                      echo "+99";
+		                    }  ?>
+		                    	
+                    	</span>
 					</span>
 				    <!--  -->
 				</a>
