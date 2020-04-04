@@ -1,10 +1,10 @@
 <!-- start navbar -->
     	<nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #05b7c2;">
-		  <a class="navbar-brand" href="<?= base_url('home') ?>">SHOP</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		  
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
-		  </button>
-
+		    </button>
+			<a class="navbar-brand" href="<?= base_url('home') ?>">SHOP</a>
 		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-weight-bolder">
 		      <li class="nav-item active">
@@ -38,7 +38,7 @@
 		  </div>  
 		    <div class="mr-lg-5 my-2 my-lg-0">
 		    	<div>
-		    	<a href="<?= base_url('home/detailOrder') ?>" class="text-dark text-decoration-none">
+		    	<a href="<?= base_url('home/myCart') ?>" class="text-dark text-decoration-none">
 				    <span class="fa-layers fa-fw">
 					    <i class="fas fa-shopping-cart fa-2x" style="color:#2F4F4F"></i>
 					    <i class="fas fa-circle fa-inverse fa-2x" data-fa-transform="shrink-5 up-6 right-7" style="color:Tomato"></i>

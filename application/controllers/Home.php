@@ -30,13 +30,15 @@ class Home extends CI_Controller {
 		$this->load->view('store/templates/footer');
 	}
 
-	public function detailOrder()
+	public function myCart()
 	{
-		$data['user'] = $this->user;
-	
+		$data['user'] 		= $this->user;
+		$data['backArrow']	= 'home';
+		$data['title']		= 'Keranjang Saya';
+		
 		$this->load->view('store/templates/header',$data);
-		$this->load->view('store/templates/topbar',$data);
-		$this->load->view('store/detail_order',$data);
+		$this->load->view('store/templates/order_topbar',$data);
+		$this->load->view('store/my_cart',$data);
 		$this->load->view('store/templates/footer');
 	}
 
@@ -74,6 +76,12 @@ class Home extends CI_Controller {
 
 	public function checkout()
 	{
-		
+		$data['user'] 		= $this->user;
+		$data['backArrow']	= 'home/myCart';
+
+		$this->load->view('store/templates/header',$data);
+		$this->load->view('store/templates/order_topbar',$data);
+		$this->load->view('store/checkout',$data);
+		$this->load->view('store/templates/footer');
 	}
 }
