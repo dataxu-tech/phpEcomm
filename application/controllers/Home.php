@@ -71,4 +71,9 @@ class Home extends CI_Controller {
 	$this->cart->update($data);
 	redirect('home/detailOrder');
 	}
+
+	public function checkout()
+	{
+		
+	}
 }
