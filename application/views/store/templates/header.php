@@ -14,6 +14,6 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="<?= base_url('assets/') ?>vendor/sbadmin/css/sb-admin-2.min.css">
 
-    <title>WEB</title>
+    <title><?= $title; ?></title>
   </head>
   <body id="page-top">

@@ -1,15 +1,22 @@
 <div class="container-fluid">
-  <div class="row">
-	<div class="col-3 font-weight-bolder">Produk</div>
-	<div class="col-4 col-md-3 font-weight-bolder">Item</div>
-	<div class="col-2 col-md-3 font-weight-bolder">Sub Total</div>
-	<div class="col-3 font-weight-bolder">ubah</div>
+  <div class="row mb-4">
+	<div class="col-4 col-md-3 font-weight-bolder d-none d-sm-block">Produk</div>
+	<div class="col-4 col-md-3 font-weight-bolder d-none d-sm-block">Item</div>
+	<!-- product name display when small width -->
+	<div class="col-4 d-block d-md-none font-weight-bolder ml-auto">
+	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+	    ubah
+	  </button>
+	</div>
+	<div class="col-md-3 font-weight-bolder d-none d-sm-block">Sub Total</div>
+	<div class="col-md-3 font-weight-bolder d-none d-sm-block">Perubahan</div>
   </div>
+
   <?php $i = 1; ?>
   <?php foreach ($this->cart->contents() as $items): ?>
   <div class="row mt-2">
   	<?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
-  	<div class="col-3 ">
+  	<div class="col-4 col-md-3 ">
   		<div class="row">
   			<div class="col-12 col-md-6 col-lg-4">
   				<img src="<?= base_url('assets/upload/products/') . $items['image']; ?>" style="width: 80px;">
@@ -49,29 +56,49 @@
 		<?= number_format($items['subtotal'],0,',','.'); ?>
 	</div>
 	<!-- product subtotal price display when small width -->
-	<div class="col-2 d-block d-md-none">
-		<small><?= number_format($items['subtotal'],0,',','.'); ?></small>
+	<div class="col-4 d-block d-md-none">
+		<div class="collapse show" id="collapseExample">
+			<div class="row py-4 pl-3">
+				<small><?= number_format($items['subtotal'],0,',','.'); ?></small>
+			</div>
+		</div>
+		<div class="collapse" id="collapseExample">
+			<div class="row py-4">
+				<div class="col-6">
+					<a href="#" class="text-decoration-none" data-toggle="modal" data-target="#edit_cart">
+		                 <i class="fas fa-edit fa-lg"></i>   
+		            </a>
+				</div>
+				<div class="col-6">
+					<a class="pl-2 text-danger" data-toggle="modal" data-target="#delete_cart">
+	            		<i class="fas fa-trash-alt fa-lg"></i>
+	    			</a>
+				</div>
+			</div>
+		    
+		    
+		</div>
 	</div>
-	<div class="col-3 ">
+	<div class="col-md-3 d-none d-sm-block">
 		<a href="#" class="text-decoration-none" data-toggle="modal" data-target="#edit_cart">
                  <i class="fas fa-edit fa-lg"></i>   
         </a>
               
             
-	    <a class="pl-2 text-danger" href="<?= base_url('home/removeCart/') . $items['rowid']; ?>">
+	    <a class="pl-2 text-danger" data-toggle="modal" data-target="#delete_cart">
 	            <i class="fas fa-trash-alt fa-lg"></i>
 	    </a>
 	</div>
   </div>
   <?php endforeach; ?>
 	<div class="row justify-content-center mt-4" style="background-color: #D3D3D3 ">
-		<div class="col-5 text-right text-dark font-weight-bolder">Total Barang :</div>
-		<div class="col-5 text-dark font-weight-bolder text-left">
+		<div class="col-6 text-right text-dark font-weight-bolder">Total Barang :</div>
+		<div class="col-6 text-dark font-weight-bolder text-left">
 			Rp <?= number_format($this->cart->total(),0,',','.'); ?>
 		</div>
 	</div>
-	<div class="row justify-content-end mt-3 mr-3">
-		<div class="col-3 ">
+	<div class="row">
+		<div class="col-3 ml-auto mr-4 mt-3 ">
 			<a href="<?= base_url('home/checkout') ?>" class="btn btn-success">checkout</a>
 		</div>
 	</div>
@@ -103,6 +130,24 @@
                   </div>
                   </form>
             
+          </div>
+        </div>
+      </div>
+      <!-- modal for delete cart -->
+      <div class="modal fade" id="delete_cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-uppercase font-weight-bold text-danger">Yakin Ingin Hapus
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <a href="<?= base_url('home/removeCart/') . $items['rowid']; ?>" class="btn btn-danger">Hapus</a>
+                  </div>
           </div>
         </div>
       </div>

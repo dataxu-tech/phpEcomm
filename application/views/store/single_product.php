@@ -1,4 +1,9 @@
 <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 px-auto text-center bg-dark mt-3">
+            <h3 class="font-weight-bolder text-uppercase text-light"><?= $title ?></h3>
+        </div>
+    </div>
     <div class="row mt-2">
         <div class="col-md-12 col-lg-6">
             <div class="d-flex justify-content-center">
@@ -7,19 +12,19 @@
         </div>
         <div class="col-md-12 col-lg-4 ml-3 mt-4">
             <div class="d-flex justify-content-center text-uppercase">
-            <h2 class="font-weight-bolder"><?= $singleProduct['name']; ?></h2>
+            <h4 class="font-weight-bolder"><?= $singleProduct['name']; ?></h4>
             </div>
 
             <hr id="detile-product">
             <div class="d-flex justify-content-left text-capitalize">
-            <h4><?= 'Harga : ' . 'Rp' . $singleProduct['price']; ?></h4>
+            <h5><?= 'Harga : ' . 'Rp' . $singleProduct['price']; ?></h5>
             </div>
           
             <div class="d-flex justify-content-left text-capitalize">
-            <h4><?= 'kategori : ' . $singleProduct['category_id']; ?></h4>
+            <h5><?= 'kategori : ' . $singleProduct['category_id']; ?></h5>
             </div>
             <div class="d-flex justify-content-left text-capitalize">
-            <h4><?= 'deskripsi : ' . $singleProduct['description']; ?></h4>
+            <h5><?= 'deskripsi : ' . $singleProduct['description']; ?></h5>
             </div>
             <hr>
             <!-- visible only in large scale -->

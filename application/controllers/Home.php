@@ -11,6 +11,7 @@ class Home extends CI_Controller {
 	{
 		$data['user'] 		= $this->user;
 		$data['product']	= $this->Product_model->getallproduct();
+		$data['title']		= 'shop';
 	
 		$this->load->view('store/templates/header',$data);
 		$this->load->view('store/templates/topbar',$data);
@@ -22,6 +23,7 @@ class Home extends CI_Controller {
 	{
 		$data['user']			= $this->user;
 		$data['singleProduct'] 	= $this->Product_model->getProductById($id);
+		$data['title']			= 'Detail Produk';
 
 		$this->load->view('store/templates/header',$data);
 		$this->load->view('store/templates/topbar',$data);
@@ -61,7 +63,7 @@ class Home extends CI_Controller {
 	public function removeCart($rowid)
 	{
 		$this->cart->remove($rowid);
-		redirect('home/detailOrder');
+		redirect('home/myCart');
 	}
 
 	public function updateCart()
@@ -71,13 +73,14 @@ class Home extends CI_Controller {
 			'qty'		=> htmlspecialchars($this->input->post('qty', true))
 		];
 	$this->cart->update($data);
-	redirect('home/detailOrder');
+	redirect('home/myCart');
 	}
 
 	public function checkout()
 	{
 		$data['user'] 		= $this->user;
 		$data['backArrow']	= 'home/myCart';
+		$data['title']		= 'Checkout';
 
 		$this->load->view('store/templates/header',$data);
 		$this->load->view('store/templates/order_topbar',$data);
