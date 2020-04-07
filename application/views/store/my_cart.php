@@ -14,7 +14,7 @@
 
   <?php $i = 1; ?>
   <?php foreach ($this->cart->contents() as $items): ?>
-  <div class="row mt-2">
+  <div class="row my-2">
   	<?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
   	<div class="col-4 col-md-3 ">
   		<div class="row">
@@ -91,19 +91,27 @@
 	</div>
   </div>
   <?php endforeach; ?>
-	<div class="row justify-content-center mt-4" style="background-color: #D3D3D3 ">
-		<div class="col-6 text-right text-dark font-weight-bolder">Total Barang :</div>
-		<div class="col-6 text-dark font-weight-bolder text-left">
-			Rp <?= number_format($this->cart->total(),0,',','.'); ?>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-3 ml-auto mr-4 mt-3 ">
-			<a href="<?= base_url('home/checkout') ?>" class="btn btn-success">checkout</a>
-		</div>
-	</div>
+	<hr>
 
-	<!-- toggle for edit order -->
+	<!-- buttom navbar visible only small dan medium size -->
+      <div class="d-lg-none">
+			<nav class="navbar navbar-expand-lg navbar-light shadow-lg mb-1 bg-white rounded border fixed-bottom">
+			    <ul class="d-flex flex-column navbar-nav mr-auto">
+			      <li class="nav-item active">
+			      	<small>Total Belanja</small>
+			        
+			      </li>
+			      <li class="nav-item font-weight-bolder text-danger h5">
+			        Rp <?= number_format($this->cart->total(),0,',','.'); ?>
+			      </li>
+			    </ul>
+			    <form class="form-inline my-2 my-lg-0">
+			      <a href="<?= base_url('home/checkout') ?>" class="btn btn-danger btn-lg">Checkout</a>
+			    </form>
+			  
+			</nav>
+
+	<!-- modal for edit order -->
   <div class="modal fade" id="edit_cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -133,6 +141,7 @@
           </div>
         </div>
       </div>
+	  </div>
       <!-- modal for delete cart -->
       <div class="modal fade" id="delete_cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

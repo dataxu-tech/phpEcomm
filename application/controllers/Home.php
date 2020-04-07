@@ -81,10 +81,13 @@ class Home extends CI_Controller {
 		$data['user'] 		= $this->user;
 		$data['backArrow']	= 'home/myCart';
 		$data['title']		= 'Checkout';
+		$data['button']		= 'Buat Pesanan';
 
 		$this->load->view('store/templates/header',$data);
 		$this->load->view('store/templates/order_topbar',$data);
 		$this->load->view('store/checkout',$data);
 		$this->load->view('store/templates/footer');
 	}
+
+	
 }

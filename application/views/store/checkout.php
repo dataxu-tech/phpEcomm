@@ -56,11 +56,28 @@
 	</div>
   </div>
   <?php endforeach; ?>
-	<div class="row justify-content-center mt-4" style="background-color: #D3D3D3 ">
-		<div class="col-6 text-right text-dark font-weight-bolder">Total Barang :</div>
-		<div class="col-6 text-dark font-weight-bolder text-left">
-			Rp <?= number_format($this->cart->total(),0,',','.'); ?>
-		</div>
-	</div>
-  
+	<hr>
+	<div class="d-lg-none">
+		<nav class="navbar navbar-expand-lg navbar-light shadow-lg mb-1 bg-white rounded border fixed-bottom">
+		    <ul class="d-flex flex-column navbar-nav mr-auto">
+		      <li class="nav-item active">
+		      	<small>total pembayaran</small>
+		        
+		      </li>
+		      <li class="nav-item font-weight-bolder text-danger h5">
+		        Rp <?= number_format($this->cart->total(),0,',','.'); ?>
+		      </li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0" method="post" action="<?= base_url('home/payment') ?>">
+		      <?php foreach ($this->cart->contents() as $items): ?>
+		      <input type="hidden" name="rowid" value="<?= $items['rowid']; ?>">
+		      <input type="hidden" name="rowid" value="<?= $items['name']; ?>">
+	          <input type="hidden" name="qty" value="<?= $items['qty']; ?>">
+	          <?php endforeach; ?>
+		      <input type="hidden" name="qty" value="<?= $this->cart->total();?>">
+		      <button type="button" class="btn btn-danger btn-lg">Buat Pesanan</button>
+		    </form>
+		  
+		</nav>
+	</div>  
 </div>

@@ -1,11 +1,11 @@
 <div class="d-lg-none">
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-bottom nav-bot" >
+	<nav class="navbar navbar-expand-lg navbar-dark shadow-lg mb-1 bg-white rounded border fixed-bottom" >
          
-        <button type="button" class="btn col-4 btn-success">
-          <i class="fab fa-whatsapp fa-2x" id="item-bottom"></i>
+        <button type="button" class="btn col-4">
+          <i class="fab fa-whatsapp fa-2x text-success" id="item-bottom"></i>
         </button>
-        <button type="button" class="btn col-4 btn-primary" data-toggle="modal" data-target="#cart">
-          <i class="fas fa-shopping-cart fa-2x" id="item-bottom"></i>
+        <button type="button" class="btn col-4" data-toggle="modal" data-target="#cart">
+          <i class="fas fa-shopping-cart fa-2x text-info" id="item-bottom"></i>
         </button>
 	</nav>
 </div>
