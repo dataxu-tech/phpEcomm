@@ -7,4 +7,9 @@ class User_model extends CI_Model
 	{
 		return $this->db->get('user')->result_array();
 	}
+
+	public function getCustomerAddress()
+	{
+		return $this->db->get('customer_address')->result_array();
+	}
 }

@@ -34,9 +34,11 @@ class Home extends CI_Controller {
 
 	public function myCart()
 	{
+		
 		$data['user'] 		= $this->user;
-		$data['backArrow']	= 'home';
 		$data['title']		= 'Keranjang Saya';
+		$data['backArrow']	= 'home';
+		$data['getAddress']	= $this->User_model->getCustomerAddress();
 		
 		$this->load->view('store/templates/header',$data);
 		$this->load->view('store/templates/order_topbar',$data);

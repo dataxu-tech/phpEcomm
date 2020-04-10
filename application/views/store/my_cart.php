@@ -92,7 +92,18 @@
   </div>
   <?php endforeach; ?>
 	<hr>
-
+	<!-- check whether user has address or not -->
+	<?php if (isset($getAddress)) : ?>
+	<div class="row">
+		<div>isikan alamat</div>
+		<a href=" <?= base_url('home/setting') ?> "></a>
+	</div>
+	<?php 	else : ?>
+	<div class="row">
+		<div>silahkan lanjutkan belanja</div>
+		
+	</div>
+	<?php endif; ?>
 	<!-- buttom navbar visible only small dan medium size -->
       <div class="d-lg-none">
 			<nav class="navbar navbar-expand-lg navbar-light shadow-lg mb-1 bg-white rounded border fixed-bottom">
@@ -105,8 +116,13 @@
 			        Rp <?= number_format($this->cart->total(),0,',','.'); ?>
 			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0">
-			      <a href="<?= base_url('home/checkout') ?>" class="btn btn-danger btn-lg">Checkout</a>
+			    <form class="form-inline my-2 my-lg-0" method="post" action="<?= base_url('home/checkout') ?>">
+			    	<button type="submit" class="btn btn-danger btn-lg">
+			    		<a href="<?= base_url('home/checkout') ?>" class="text-light text-decoration-none">
+			    			Checkout
+			    		</a>
+			    	</button>
+			      
 			    </form>
 			  
 			</nav>
